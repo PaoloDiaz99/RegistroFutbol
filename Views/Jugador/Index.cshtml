@@ -1,7 +1,11 @@
 @model RegistroFutbol.Models.Jugador
 
-<h1>Registro de Jugadores</h1>
 
+<h1 >Registro de Jugadores</h1>
+
+<
+
+<div class="text-center">
 <form asp-controller="Jugador" asp-action="Create" >
     <label for="Nombre">Nombre del Jugador:</label>
     <input type="text" id="Nombre" name="Nombre" required>
@@ -41,10 +45,10 @@
     <input type="number" id="Temporada" name="Temporada" min="1" max="4" required>
     <br>
     <label for="HasFaltas">¿Ha tenido faltas?</label>
-    <input type="checkbox" id="HasFaltas" name="HasFaltas" value="true">
-    <label for="HasFaltas">Sí</label>
-    <input type="checkbox" id="HasFaltas" name="HasFaltas" value="false">
-    <label for="HasFaltas">No</label>
+    <input type="checkbox" id="Faltas" name="Faltas" value="Verdadero">
+    <label for="Faltas">Sí</label>
+    <input type="checkbox" id="Faltas" name="Faltas" value="Falso">
+    <label for="Faltas">No</label>
     <br>
     <button type="submit">Registrar</button>
 </form>
@@ -59,7 +63,10 @@
         <p>Club: @Model.Club</p>
         <p>Categorías: @string.Join(", ", Model.Categoria)</p>
         <p>Temporadas: @Model.Temporada</p>
-       <p>Ha tenido faltas: @((Model.Faltas) ? "Sí" : "No")</p>
         <p>Monto Total: @Model.MontoTotal.ToString("C")</p>
+        <p>Ha tenido faltas: @((Model.Faltas) ? "Sí" : "No")</p>
     </div>
 }
+
+
+</div>
