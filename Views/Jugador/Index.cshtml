@@ -35,6 +35,7 @@
         <input type="number" id="Temporada" name="Temporada" min="1" max="4" required>
         <br><br>
 
+<<<<<<< HEAD
         <button type="submit">Registrar</button>
     </form>
 
@@ -52,3 +53,66 @@
         </div>
     }
 </div>
+=======
+<form asp-controller="Jugador" asp-action="Create" >
+    <label for="Nombre">Nombre del Jugador:</label>
+    <input type="text" id="Nombre" name="Nombre" required>
+    <br>
+    <label for="Edad">Edad:</label>
+    <br>
+    <input type="number" id="Edad" name="Edad" required>
+    <br>
+    <label for="Genero">Género:</label>
+    <br>
+    <input type="radio" id="Masculino" name="Genero" value="Masculino" required>
+    <label for="Masculino">Masculino</label>
+    <input type="radio" id="Femenino" name="Genero" value="Femenino">
+    <label for="Femenino">Femenino</label>
+    <br>
+    <label for="Club">Club:</label>
+    <br>
+    <select id="Club" name="Club" required>
+        <option value="U">Universitario</option>
+        <option value="Alianza">Alianza Lima</option>
+        <option value="Cristal">Sporting Cristal</option>
+        <option value="Cienciano">Cienciano</option>
+    </select>
+    <br>
+    <label for="Categoria">Categoría:</label>
+    <br>
+    <input type="checkbox" id="CategoriaSub17" name="Categoria" value="Sub 17">
+    <label for="CategoriaSub17">Sub 17</label>
+    <br>
+    <input type="checkbox" id="CategoriaSub20" name="Categoria" value="Sub 20">
+    <label for="CategoriaSub20">Sub 20</label>
+    <br>
+    <input type="checkbox" id="CategoriaMayores" name="Categoria" value="Mayores">
+    <label for="CategoriaMayores">Mayores</label>
+    <br>
+    <label for="Temporada">Temporada (hasta 4):</label>
+    <input type="number" id="Temporada" name="Temporada" min="1" max="4" required>
+    <br>
+    <label for="HasFaltas">¿Ha tenido faltas?</label>
+    <input type="checkbox" id="HasFaltas" name="HasFaltas" value="true">
+    <label for="HasFaltas">Sí</label>
+    <input type="checkbox" id="HasFaltas" name="HasFaltas" value="false">
+    <label for="HasFaltas">No</label>
+    <br>
+    <button type="submit">Registrar</button>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h2>Resultado</h2>
+        <p>Jugador: @Model.Nombre</p>
+        <p>Edad: @Model.Edad</p>
+        <p>Género: @Model.Genero</p>
+        <p>Club: @Model.Club</p>
+        <p>Categorías: @string.Join(", ", Model.Categoria)</p>
+        <p>Temporadas: @Model.Temporada</p>
+       <p>Ha tenido faltas: @((Model.Faltas) ? "Sí" : "No")</p>
+        <p>Monto Total: @Model.MontoTotal.ToString("C")</p>
+    </div>
+}
+>>>>>>> f9d976b167f9dbf197f6a8ed18949e11f83e1a08
