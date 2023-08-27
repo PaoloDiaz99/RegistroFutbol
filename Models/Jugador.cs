@@ -14,5 +14,7 @@ namespace RegistroFutbol.Models
         public List<string> Categoria { get; set; } = new List<string>();
         public int Temporada { get; set; }
         public decimal MontoTotal { get; set; }
+
+        public bool Faltas { get; set; }
     }
 }
